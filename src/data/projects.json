@@ -1,0 +1,26 @@
+[
+  {
+    "title": "TechVaul",
+    "imageSrc": "projects/project.png",
+    "description": "This is a project made to learn the latest languages by building an app.",
+    "skills": ["Python", "PostgreSQL", "Redis"],
+    "demo": "https://www.example.com",
+    "source": "https://www.github.com"
+  },
+  {
+    "title": "Travelgram",
+    "imageSrc": "projects/project.png",
+    "description": "This is a project made to learn the latest languages by building an app.",
+    "skills": ["Django", "PostgreSQL", "Redis", "CSS"],
+    "demo": "https://www.example.com",
+    "source": "https://www.github.com"
+  },
+  {
+    "title": "RestBook",
+    "imageSrc": "projects/project.png",
+    "description": "This is a project made to learn REST FUll arquitecture.",
+    "skills": ["Java", "Spring Boot", "PostgreSQL"],
+    "demo": "https://www.example.com",
+    "source": "https://www.github.com"
+  }
+]
