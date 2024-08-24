@@ -9,12 +9,12 @@ import {Contact} from './components/Contact/Contact'
 function App() {
 
   return <div className={styles.App}>
-    <Navbar></Navbar>
-    <Hero></Hero>
-    <About></About>
-    <Experience></Experience>
-    <Projects></Projects>
-    <Contact></Contact>
+    <Navbar />
+    <Hero />
+    <About />
+    <Experience />
+    <Projects />
+    <Contact />
   </div>;
 }
 
