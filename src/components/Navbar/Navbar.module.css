@@ -1,11 +1,17 @@
 @import "../../vars.css";
 
 .navbar {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(50px);
+}
+
+.navContent {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 61px;
+  padding-top: 50px;
   z-index: 2;
   margin: 0 10%;
 }
@@ -14,7 +20,7 @@
   font-size: 30px;
   font-weight: 600;
   text-decoration: none;
-  color: #0ae98a;
+  color: #00ed83;
 }
 
 
@@ -36,10 +42,15 @@
   font-size: 25px;
   color: var(--color-text);
   text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.menuItems a:hover {
+  color: #00ed83;
 }
 
 @media screen and (max-width: 830px) {
-  .navbar {
+  .navContent {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -65,12 +76,7 @@
     align-items: center;
     gap: 13px;
     border-radius: 10px;
-    background: rgb(25, 55, 109);
-    background: linear-gradient(
-      0deg,
-      rgba(25, 55, 109, 0.2) 0%,
-      rgba(25, 55, 109, 1) 100%
-    );
+    background-color: #142433;
     padding: 24px 33px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
   }

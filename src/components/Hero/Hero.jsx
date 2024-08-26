@@ -20,7 +20,7 @@ export const Hero = () => {
   })
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="hero">
       <div className={styles.content}>
         <h1 className={styles.title}>
 	  <span>{text}</span>
@@ -30,11 +30,12 @@ export const Hero = () => {
           I'm a full-stack developer with experience in Machine learning too.
 	  Reach out if you'd like to learn more!
         </p>
-	<a href="/jordan_cv.pdf" className={styles.downloadBtn} download>
+	<a href="/cv_Jordan_Munoz.pdf" className={styles.cvBtn} target="_blank" rel="noopener noreferrer">
 	  Download CV
 	</a>
       </div>
       <img
+	//<a href="https://www.flaticon.com/free-icons/programming-language" title="programming language icons">Programming language icons created by Freepik - Flaticon</a>
         src={getImageUrl("hero/heroImage.png")}
         alt="Hero image of me"
         className={styles.heroImg}

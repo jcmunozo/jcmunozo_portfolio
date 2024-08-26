@@ -9,6 +9,7 @@
   z-index: 1;
   margin-left: 10%;
   margin-right: 10%;
+  scroll-margin-top: 150px;
 }
 
 .content {
@@ -39,7 +40,7 @@
   margin-bottom: 52px;
 }
 
-.contactBtn {
+.cvBtn {
   text-decoration: none;
   background-color: var(--color-primary);
   color: var(--color-text);
@@ -48,6 +49,11 @@
   font-weight: 600;
   padding: 17px 26px;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cvBtn:hover {
+  background-color: #19366c;
 }
 
 .heroImg {
@@ -77,7 +83,6 @@
   width: 50vw;
   height: 50vw;
   min-width: 350px;
-  min-width: 350px;
   top: -128px;
   left: -10vw;
   border-radius: 764px;
@@ -91,7 +96,6 @@
   width: 70vw;
   height: 50vw;
   min-width: 350px;
-  min-width: 250px;
   top: 246px;
   right: -25vw;
   border-radius: 764px;
@@ -107,5 +111,13 @@
 
   .content {
     align-items: center;
+  }
+
+  .heroImg {
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 55px;
   }
 }

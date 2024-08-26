@@ -1,26 +1,40 @@
 [
   {
     "title": "TechVaul",
-    "imageSrc": "projects/project.png",
+    "imageSrc": "projects/techvault.png",
     "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["Python", "PostgreSQL", "Redis"],
+    "skills": [ 
+      {"name":"Python","url":"projects/python.png"},
+      {"name":"PostgreSQL","url":"projects/postgresql.png"}, 
+      {"name":"Redis","url":"projects/redis.png"}
+    ],
+
     "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "source": "https://github.com/jcmunozo/techVault"
   },
   {
     "title": "Travelgram",
-    "imageSrc": "projects/project.png",
+    "imageSrc": "projects/travelgram.png",
     "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["Django", "PostgreSQL", "Redis", "CSS"],
+    "skills": [ 
+      {"name":"Django","url":"projects/django.png"},
+      {"name":"PostgreSQL","url":"projects/postgresql.png"}, 
+      {"name":"CSS","url":"projects/css.png"}
+    ],
     "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "source": "https://github.com/jcmunozo/Travelgram"
   },
   {
     "title": "RestBook",
-    "imageSrc": "projects/project.png",
+    "imageSrc": "projects/restbook.png",
     "description": "This is a project made to learn REST FUll arquitecture.",
-    "skills": ["Java", "Spring Boot", "PostgreSQL"],
+    "skills": ["projects/java.png", "projects/springboot.png", "projects/postgresql.png"],
+    "skills": [ 
+      {"name":"Java","url":"projects/java.png"},
+      {"name":"PostgreSQL","url":"projects/postgresql.png"}, 
+      {"name":"Spring Boot","url":"projects/springboot.png"}
+    ],
     "demo": "https://www.example.com",
-    "source": "https://www.github.com"
+    "source": "https://github.com/jcmunozo/RestBook_Backend"
   }
 ]

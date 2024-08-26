@@ -33,3 +33,7 @@ dist-ssr
 *.png 
 *.jpg
 *.svg
+*.jpeg
+
+# pdf
+*.pdf

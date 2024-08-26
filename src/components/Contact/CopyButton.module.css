@@ -1,0 +1,33 @@
+.copyContainer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.copyButton {
+  display: flex;
+  align-items: center;
+  background-color: #0e5a40;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s;
+  border: 2px solid #0e5a40;
+  box-sizing: border-box;
+}
+
+.copyButton:hover {
+  background-color: transparent;
+  color: #3e8e41;
+  border: 2px solid #3e8e41;
+}
+
+.copyButton:active {
+  background-color: #3e8e41;
+}

@@ -1,10 +1,13 @@
 @import "../../vars.css";
 
 .container {
+  position: relative;
+  z-index: 1;
   color: var(--color-text);
   margin-top: 79px;
   margin-left: 10%;
   margin-right: 10%;
+  scroll-margin-top: 90px;
 }
 
 .title {
@@ -19,45 +22,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 14px;
-}
-
-.skills {
-  width: 45%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 37px;
-}
-
-.skill {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 11px;
-}
-
-.skillImageContainer {
-  background-color: var(--color-secondary);
-  border-radius: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  height: 120px;
-}
-
-.skillImageContainer img {
-  width: 75px;
-}
-
-.skill p {
-  font-size: 25px;
-  font-family: var(--font-roboto);
-  font-weight: 500;
+  margin-top: 40px;
 }
 
 .history {
-  width: 45%;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -69,15 +37,32 @@
   align-items: center;
   gap: 17px;
   background: #19376d;
-  background: linear-gradient(90deg, #19376d 0%, rgba(25, 55, 109, 0) 100%);
+  background: linear-gradient(90deg, #182f55 0%, #0e5c3f 100%);
   border-radius: 10px;
   padding: 24px;
 }
 
-.historyItem img {
+.imageCover {            
   width: 200px;
-  background-color: white;
-  border-radius: 10px;
+  height: 200px;
+  border-radius: 50%;
+  background: #20496d;
+  box-shadow: 
+      -8px -8px 16px rgba(255, 255, 255, 0.1),
+      8px 8px 16px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.historyItem img {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 
+      -4px -4px 8px rgba(255, 255, 255, 0.2),
+      4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .historyItemDetails {
@@ -92,6 +77,11 @@
 .historyItemDetails p {
   font-size: 20px;
   font-weight: 300;
+  background-color: #556ab8;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 10px;
 }
 
 .historyItemDetails ul {
@@ -99,7 +89,28 @@
   list-style-position: inside;
   font-size: 25px;
   list-style-type: disc;
-  margin-left: 17px;
+  margin-left: 20px;
+}
+
+.historyItemDetails ul li {
+  margin-top: 10px;
+}
+
+.historyItemDetails ul li::marker {
+  color: #00ed83;
+  font-size: 25px;
+}
+.bottomBlur {
+  position: absolute;
+  width: 30vw;
+  height: 50vw;
+  min-width: 150px;
+  bottom: -600px;
+  left: -40vh;
+  border-radius: 764px;
+  background: rgba(14, 92, 63, 1);
+  filter: blur(100px);
+  z-index: -1;
 }
 
 @media screen and (max-width: 830px) {
@@ -108,11 +119,11 @@
     align-items: center;
     gap: 34px;
   }
-
-  .skills {
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
+  
+  .historyItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .history {

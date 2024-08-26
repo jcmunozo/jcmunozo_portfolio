@@ -4,13 +4,26 @@
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  background: linear-gradient(180deg, #576cbc 0%, #132a53 100%);
-  box-shadow: 0 16px 14px 0 #04152d;
+  background: linear-gradient(180deg, #182f55 0%, #0e5c3f 100%);
   padding: 18px 24px;
   max-width: 345px;
+  z-index: 1;
+}
+
+.imageSkill {
+  width:50px;
+  height:50px;
 }
 
 .image {
+  border-radius: 10px;
+  background: #5469ba;
+  box-shadow: 
+      -8px -8px 16px rgba(0, 0, 0, 0.2),
+      8px 8px 16px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 26px;
 }
 
@@ -25,22 +38,28 @@
   font-weight: 400;
 }
 
+.techs {
+  margin-top:6px;
+  font-size: 25px;
+  font-weight: 400;
+}
+
 .skills {
-  width: 100%;
-  margin-top: 14px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 5px;
   list-style: none;
 }
 
 .skill {
-  font-size: 25px;
-  font-weight: 400;
-  border-radius: 100px;
-  background: var(--color-dark);
-  padding: 2px 22px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
 }
 
 .links {
@@ -55,7 +74,7 @@
   color: var(--color-text);
   font-size: 30px;
   font-weight: 600;
-  border-radius: 100px;
+  border-radius: 10px;
   background: var(--color-primary);
   padding: 1px 22px;
 }
