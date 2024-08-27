@@ -1,21 +1,22 @@
 import React, {useState} from "react";
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
+import me from "../../data/hero.json";
 import styles from "./Hero.module.css";
 import { getImageUrl } from "../../utils";
 
+const { welcome, heroMe } = me
 
 export const Hero = () => {
   const [isTypingComplete, setIsTypingComplete] = useState(false);
-
   const [text] = useTypewriter({
-    words: [" Hi I'm Jordan"],
+    words: [welcome],
     loop: 1,
     typeSpeed: 100,
     onLoopDone: () => {
       setTimeout(() => {
         setIsTypingComplete(true);
-      }, 2000);
+      }, 3500);
     },
   })
 
@@ -27,8 +28,7 @@ export const Hero = () => {
 	  {!isTypingComplete && <Cursor cursorColor='red' />}
 	</h1>
         <p className={styles.description}>
-          I'm a full-stack developer with experience in Machine learning too.
-	  Reach out if you'd like to learn more!
+	  { heroMe }
         </p>
 	<a href="/cv_Jordan_Munoz.pdf" className={styles.cvBtn} target="_blank" rel="noopener noreferrer">
 	  Download CV

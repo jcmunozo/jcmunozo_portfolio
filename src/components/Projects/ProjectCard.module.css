@@ -62,19 +62,23 @@
   height: 60px;
 }
 
-.links {
-  width: 100%;
-  margin-top: 26px;
-  display: flex;
-  justify-content: space-around;
-}
-
 .link {
   text-decoration: none;
+  display: inline-block;
   color: var(--color-text);
   font-size: 30px;
-  font-weight: 600;
+  text-align: center;
   border-radius: 10px;
   background: var(--color-primary);
-  padding: 1px 22px;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 3px solid var(--color-primary);
+  box-sizing: border-box;
 }
+
+.link:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 3px solid var(--color-primary);
+}
+

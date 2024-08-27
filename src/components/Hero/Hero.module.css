@@ -49,11 +49,15 @@
   font-weight: 600;
   padding: 17px 26px;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s;
+  border: 3px solid var(--color-primary);
+  box-sizing: border-box;
 }
 
 .cvBtn:hover {
-  background-color: #19366c;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 3px solid var(--color-primary);
 }
 
 .heroImg {
