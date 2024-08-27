@@ -34,7 +34,7 @@
 .links {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   list-style: none;
   gap: 26px;
 }
@@ -46,6 +46,9 @@
 }
 
 .link a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
   color: var(--color-text);
   text-decoration: none;
   font-size: 30px;
@@ -67,5 +70,9 @@
 
   .links {
     align-items: center;
+  }
+
+  .links span {
+    display: none;
   }
 }

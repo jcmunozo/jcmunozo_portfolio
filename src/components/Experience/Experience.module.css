@@ -130,4 +130,8 @@
     width: 100%;
     gap: 9px;
   }
+
+  .bottomBlur {
+    display: none;
+  }
 }

@@ -84,4 +84,8 @@
     flex-direction: row;
     justify-content: center;
   }
+
+  .bottomBlur {
+    display: none;
+  }
 }

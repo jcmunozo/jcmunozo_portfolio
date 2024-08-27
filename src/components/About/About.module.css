@@ -59,6 +59,7 @@
 .aboutItem h3 {
   font-size: 25px;
   font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .aboutItem p {
@@ -95,3 +96,14 @@
     margin-right: 10px;
   }
 }
+
+@media screen and (max-width: 430px) {
+  .aboutItem {
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}
+

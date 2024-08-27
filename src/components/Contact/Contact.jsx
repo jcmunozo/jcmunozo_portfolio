@@ -13,20 +13,23 @@ export const Contact = () => {
       </div>
       <ul className={styles.links}>
         <li className={styles.link}>
-          <img src={getImageUrl("contact/emailIcon.png")} alt="Email icon" />
-          <a href="mailto:jcmunozo@unicauca.edu.co">jcmunozo@unicauca.edu.co</a>
+          <a href="mailto:jcmunozo@unicauca.edu.co">
+	    <img src={getImageUrl("contact/emailIcon.png")} alt="Email icon" />
+	    <span>jcmunozo@unicauca.edu.co</span>
+	  </a>
 	  <CopyButton text="jcmunozo@unicauca.edu.co" />
         </li>
         <li className={styles.link}>
-          <img
-            src={getImageUrl("contact/linkedinIcon.png")}
-            alt="LinkedIn icon"
-          />
-          <a href="https://www.linkedin.com/in/jordanmuñoz/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jordanmuñoz</a>
+          <a href="https://www.linkedin.com/in/jordanmuñoz/" target="_blank" rel="noopener noreferrer">
+	    <img src={getImageUrl("contact/linkedinIcon.png")} alt="LinkedIn icon"/>
+	    <span>linkedin.com/in/jordanmuñoz</span>
+	  </a>
         </li>
         <li className={styles.link}>
-          <img src={getImageUrl("contact/githubIcon.png")} alt="Github icon" />
-          <a href="https://www.github.com/jcmunozo" target="_blank" rel="noopener noreferrer">github.com/jcmunozo</a>
+          <a href="https://www.github.com/jcmunozo" target="_blank" rel="noopener noreferrer">
+	    <img src={getImageUrl("contact/githubIcon.png")} alt="Github icon" />
+	    <span>github.com/jcmunozo</span>
+	  </a>
         </li>
       </ul>
     </footer>

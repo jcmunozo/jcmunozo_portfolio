@@ -44,7 +44,7 @@
   text-decoration: none;
   background-color: var(--color-primary);
   color: var(--color-text);
-  border-radius: 100px;
+  border-radius: 10px;
   font-size: 30px;
   font-weight: 600;
   padding: 17px 26px;
@@ -123,5 +123,9 @@
   
   .title {
     font-size: 55px;
+  }
+
+  .bottomBlur {
+    display: none;
   }
 }
