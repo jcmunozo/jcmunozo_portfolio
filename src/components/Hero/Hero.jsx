@@ -14,9 +14,7 @@ export const Hero = () => {
     loop: 1,
     typeSpeed: 100,
     onLoopDone: () => {
-      setTimeout(() => {
         setIsTypingComplete(true);
-      }, 3500);
     },
   })
 

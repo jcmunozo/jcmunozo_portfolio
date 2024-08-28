@@ -25,17 +25,17 @@
   margin-top: 40px;
 }
 
-.history {
+.experience {
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-.historyItem {
+.experienceItem {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 17px;
+  gap: 22px;
   background: #19376d;
   background: linear-gradient(90deg, #182f55 0%, #0e5c3f 100%);
   border-radius: 10px;
@@ -55,7 +55,7 @@
   align-items: center;
 }
 
-.historyItem img {
+.experienceItem img {
   width: 90%;
   height: 90%;
   border-radius: 50%;
@@ -65,16 +65,16 @@
       4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.historyItemDetails {
+.experienceItemDetails {
   font-family: var(--font-roboto);
 }
 
-.historyItemDetails h3 {
+.experienceItemDetails h3 {
   font-size: 30px;
   font-weight: 500;
 }
 
-.historyItemDetails p {
+.experienceItemDetails p {
   font-size: 20px;
   font-weight: 300;
   background-color: #556ab8;
@@ -84,7 +84,7 @@
   border-radius: 10px;
 }
 
-.historyItemDetails ul {
+.experienceItemDetails ul {
   margin-top: 6px;
   list-style-position: inside;
   font-size: 25px;
@@ -92,11 +92,11 @@
   margin-left: 20px;
 }
 
-.historyItemDetails ul li {
+.experienceItemDetails ul li {
   margin-top: 10px;
 }
 
-.historyItemDetails ul li::marker {
+.experienceItemDetails ul li::marker {
   color: #00ed83;
   font-size: 25px;
 }
@@ -120,13 +120,13 @@
     gap: 34px;
   }
   
-  .historyItem {
+  .experienceItem {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .history {
+  .experience {
     width: 100%;
     gap: 9px;
   }

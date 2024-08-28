@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from "./Experience.module.css";
-import history from "../../data/history.json";
+import experience from "../../data/experience.json";
 import { getImageUrl } from "../../utils";
 
 export const Experience = () => {
@@ -9,23 +9,23 @@ export const Experience = () => {
     <section className={styles.container} id="experience">
       <h2 className={styles.title}>Experience</h2>
       <div className={styles.content}>
-        <ul className={styles.history}>
-          {history.map((historyItem, id) => {
+        <ul className={styles.experience}>
+          {experience.map((experienceItem, id) => {
             return (
-              <li key={id} className={styles.historyItem}>
+              <li key={id} className={styles.experienceItem}>
 		<div className={styles.imageCover}>
 		  <img
-		    src={getImageUrl(historyItem.imageSrc)}
-		    alt={`${historyItem.organisation} Logo`}
+		    src={getImageUrl(experienceItem.imageSrc)}
+		    alt={`${experienceItem.organisation} Logo`}
 		  />
 		</div>
-                <div className={styles.historyItemDetails}>
-                  <h3>{`${historyItem.role}`}</h3>
-		  <p>{`${historyItem.organisation}`}</p>
+                <div className={styles.experienceItemDetails}>
+                  <h3>{`${experienceItem.role}`}</h3>
+		  <p>{`${experienceItem.organisation}`}</p>
 		  <br/>
-                  <p>{`${historyItem.startDate} - ${historyItem.endDate}`}</p>
+                  <p>{`${experienceItem.startDate} - ${experienceItem.endDate}`}</p>
                   <ul>
-                    {historyItem.experiences.map((experience, id) => {
+                    {experienceItem.experiences.map((experience, id) => {
                       return <li key={id}>{experience}</li>;
                     })}
                   </ul>

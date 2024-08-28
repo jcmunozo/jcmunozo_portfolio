@@ -24,6 +24,18 @@
     "imageSrc": "skills/postgres.png"
   },
   {
+    "title": "Linux",
+    "imageSrc": "skills/linux.png"
+  },
+  {
+    "title": "Azure",
+    "imageSrc": "skills/azure.png"
+  },
+  {
+    "title": "C#",
+    "imageSrc": "skills/c_sharp.png"
+  },
+  {
     "title": "Figma",
     "imageSrc": "skills/figma.png"
   }

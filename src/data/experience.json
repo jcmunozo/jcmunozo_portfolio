@@ -4,7 +4,7 @@
     "organisation": "SLB, Oil and Gas Operations",
     "startDate": "Juni, 2023",
     "endDate": "December, 2024",
-    "experiences": ["Work on frontend with Angular", "Build an API for third-party users"],
+    "experiences": ["I developed Angular components.", "I learned Azure CI/CD.", "Created an API proxy using Apigee."],
     "imageSrc": "history/slb.jpeg"
   }
 ]

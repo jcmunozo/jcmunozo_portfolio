@@ -28,12 +28,3 @@ dist-ssr
 
 # Env variables
 .env
-
-# Img
-*.png 
-*.jpg
-*.svg
-*.jpeg
-
-# pdf
-*.pdf

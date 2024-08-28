@@ -1,8 +1,8 @@
 [
   {
-    "title": "TechVaul",
+    "title": "TechVault",
     "imageSrc": "projects/techvault.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
+    "description": "A personal project to save everything I’ve learned about a specific tech.",
     "skills": [ 
       {"name":"Python","url":"projects/python.png"},
       {"name":"PostgreSQL","url":"projects/postgresql.png"}, 
@@ -15,7 +15,7 @@
   {
     "title": "Travelgram",
     "imageSrc": "projects/travelgram.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
+    "description": "A useful Instagram clone to learn Django and web development concepts.",
     "skills": [ 
       {"name":"Django","url":"projects/django.png"},
       {"name":"PostgreSQL","url":"projects/postgresql.png"}, 
@@ -27,7 +27,7 @@
   {
     "title": "RestBook",
     "imageSrc": "projects/restbook.png",
-    "description": "This is a project made to learn REST FUll arquitecture.",
+    "description": "A basic Rest full API for managing books. Includes swagger documentation.",
     "skills": ["projects/java.png", "projects/springboot.png", "projects/postgresql.png"],
     "skills": [ 
       {"name":"Java","url":"projects/java.png"},

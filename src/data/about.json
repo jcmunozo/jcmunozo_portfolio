@@ -2,21 +2,21 @@
   {
     "title":"Frontend Development",
     "img":"about/ui.png",
-    "description":"I'm a frontend developer with experience in building responsive and optimized sites"
+    "description":"Experienced in building responsive and optimized web applications, focusing on ideal UX/UI solutions to make our frontend more persuasive."
   },
   {
     "title":"Backend Development",
     "img":"about/db.png",
-    "description":"I have experience developing fast and optimised back-end systems and APIs"
+    "description":"I'm a Linux user with solid understanding of databases, expertise in service-based architectures and API development."
   },
   {
     "title":"Cloud",
     "img":"about/cloud.png",
-    "description":"I have designed multiple landing pages and have created design systems as well"
+    "description":"Expertise in Azure cloud services, particularly Azure DevOps for CI/CD, with knowledge of workflows to effectively administer and deploy cloud solutions."
   },
   {
     "title":"IA",
     "img":"about/ia.png",
-    "description":"I have designed multiple landing pages and have created design systems as well"
+    "description":"AI enthusiast with academic experience in deep learning, machine learning, and data mining. Familiar with business intelligence, leveraging data warehouses for analysis and visualization."
   }
 ]
