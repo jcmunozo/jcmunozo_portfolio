@@ -1,8 +1,24 @@
-# React + Vite
+# My web portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This website was built using React. I'd love to hear your feedback on the code  
+your insights and suggestions are greatly appreciated!
 
-Currently, two official plugins are available:
+---
+## Web
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [jcmunozo](https://jcmunozo.pro/)
+
+---
+## Technologies
+- [React](https://react.dev/)
+
+---
+## Images and Icons source
+
+- [icon-icons.com](https://icon-icons.com/)
+- [pngwing.com](https://www.pngwing.com/)
+- [flaticon](https://www.flaticon.com/)
+
+###### by jcmunozo
+
+
