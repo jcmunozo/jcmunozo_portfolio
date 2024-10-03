@@ -3,6 +3,7 @@
 .navbar {
   position: sticky;
   top: 0;
+  padding-bottom:5px;
   z-index: 30;
   backdrop-filter: blur(50px);
 }
