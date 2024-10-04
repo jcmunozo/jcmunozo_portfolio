@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
-import me from "../../data/hero.json";
+import me from "@/data/hero.json";
 import styles from "./Hero.module.css";
-import { getImageUrl } from "../../utils";
+import { getImageUrl } from "@/utils";
 
 const { welcome, heroMe } = me
 

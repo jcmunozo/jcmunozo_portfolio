@@ -1,8 +1,8 @@
 import React from "react";
 
 import styles from "./Experience.module.css";
-import experience from "../../data/experience.json";
-import { getImageUrl } from "../../utils";
+import experience from "@/data/experience.json";
+import { getImageUrl } from "@/utils";
 
 export const Experience = () => {
   return (

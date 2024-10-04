@@ -1,8 +1,8 @@
 import React from "react";
 
 import styles from "./About.module.css";
-import { getImageUrl } from "../../utils";
-import topics from "../../data/about.json";
+import { getImageUrl } from "@/utils";
+import topics from "@/data/about.json";
 
 export const About = () => {
   return (
