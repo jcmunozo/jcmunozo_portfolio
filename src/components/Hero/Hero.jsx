@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
-import me from "../../data/hero.json";
+import me from "@/data/hero.json";
 import styles from "./Hero.module.css";
-import { getImageUrl } from "../../utils";
+import { getImageUrl } from "@/utils";
 
 const { welcome, heroMe } = me
 
@@ -33,8 +33,7 @@ export const Hero = () => {
 	</a>
       </div>
       <img
-	//<a href="https://www.flaticon.com/free-icons/programming-language" title="programming language icons">Programming language icons created by Freepik - Flaticon</a>
-        src={getImageUrl("hero/heroImage.png")}
+        src={getImageUrl("hero/me.png")}
         alt="Hero image of me"
         className={styles.heroImg}
       />

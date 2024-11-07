@@ -36,6 +36,10 @@
     "imageSrc": "skills/c_sharp.png"
   },
   {
+    "title": "Elixir",
+    "imageSrc": "skills/elixir.png"
+  },
+  {
     "title": "Figma",
     "imageSrc": "skills/figma.png"
   }

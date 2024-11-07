@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./Contact.module.css";
 import { CopyButton } from "./CopyButton"
-import { getImageUrl } from "../../utils";
+import { getImageUrl } from "@/utils";
 
 export const Contact = () => {
   return (
