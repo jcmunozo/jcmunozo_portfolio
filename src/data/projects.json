@@ -4,9 +4,10 @@
     "imageSrc": "projects/techvault.png",
     "description": "A personal project to save everything I’ve learned about a specific tech.",
     "skills": [ 
-      {"name":"Python","url":"projects/python.png"},
-      {"name":"PostgreSQL","url":"projects/postgresql.png"}, 
-      {"name":"Redis","url":"projects/redis.png"}
+      {"name":"Python","url":"skills/python.png"},
+      {"name":"PostgreSQL","url":"skills/postgres.png"}, 
+      {"name":"Redis","url":"projects/redis.png"},
+      {"name":"Docker","url":"skills/docker.png"}
     ],
 
     "demo": "https://www.example.com",
@@ -18,8 +19,9 @@
     "description": "A useful Instagram clone to learn Django and web development concepts.",
     "skills": [ 
       {"name":"Django","url":"projects/django.png"},
-      {"name":"PostgreSQL","url":"projects/postgresql.png"}, 
-      {"name":"CSS","url":"projects/css.png"}
+      {"name":"PostgreSQL","url":"skills/postgres.png"}, 
+      {"name":"CSS","url":"skills/css.png"},
+      {"name":"Docker","url":"skills/docker.png"}
     ],
     "demo": "https://www.example.com",
     "source": "https://github.com/jcmunozo/Travelgram"
@@ -31,8 +33,9 @@
     "skills": ["projects/java.png", "projects/springboot.png", "projects/postgresql.png"],
     "skills": [ 
       {"name":"Java","url":"projects/java.png"},
-      {"name":"PostgreSQL","url":"projects/postgresql.png"}, 
-      {"name":"Spring Boot","url":"projects/springboot.png"}
+      {"name":"PostgreSQL","url":"skills/postgres.png"}, 
+      {"name":"Spring Boot","url":"projects/springboot.png"},
+      {"name":"Docker","url":"skills/docker.png"}
     ],
     "demo": "https://www.example.com",
     "source": "https://github.com/jcmunozo/RestBook_Backend"

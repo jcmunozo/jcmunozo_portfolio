@@ -6,5 +6,13 @@
     "endDate": "December, 2024",
     "experiences": ["I developed Angular components.", "I learned Azure CI/CD.", "Created an API proxy using Apigee."],
     "imageSrc": "history/slb.jpeg"
+  },
+  {
+    "role": "Integrations Developer Consultant",
+    "organisation": "Inchcape DDC, Global Automotive Distributor",
+    "startDate": " ",
+    "endDate": "Present",
+    "experiences": ["Working on Integrations Development"],
+    "imageSrc": "history/inchcape.jpeg"
   }
 ]
