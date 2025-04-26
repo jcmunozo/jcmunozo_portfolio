@@ -72,6 +72,24 @@
   z-index: -1;
 }
 
+@media (orientation: landscape) and (max-width: 992px) {
+  .bottomBlur {
+    min-width: unset;
+    width: 40vw;
+    height: 30vw;
+    right: -20vw;
+    top: -200px;
+  }	
+
+  .topBlur {
+    left: -5vw;
+  }
+
+  .bottomBlur {
+    right: 5vw;
+  }
+}
+
 @media screen and (max-width: 830px) {
   .content {
     flex-direction: column;
