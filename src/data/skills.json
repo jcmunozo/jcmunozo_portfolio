@@ -32,6 +32,10 @@
     "imageSrc": "skills/azure.png"
   },
   {
+    "title": "Google Cloud",
+    "imageSrc": "skills/gcp.png"
+  },
+  {
     "title": "C#",
     "imageSrc": "skills/c_sharp.png"
   },
