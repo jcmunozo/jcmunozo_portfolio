@@ -2,108 +2,110 @@
 
 .container {
   color: var(--color-text);
-  margin-top: 79px;
-  margin-left: 10%;
+  margin-top: var(--spacing-section);
+  margin-left: var(--margin-side-mobile);
+  margin-right: var(--margin-side-mobile);
   position: relative;
   z-index: 1;
-  margin-right: 10%;
   scroll-margin-top: 90px;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: var(--margin-side-desktop);
+    margin-right: var(--margin-side-desktop);
+  }
 }
 
 .title {
   color: var(--color-text);
-  font-size: 35px;
+  font-size: var(--font-size-section-title);
   font-weight: 700;
   letter-spacing: 1.75px;
   text-transform: uppercase;
+  margin-bottom: 40px;
 }
 
 .content {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-top: 14px;
+  justify-content: center;
+  width: 100%;
 }
 
 .skills {
-  width: 70%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 37px;
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 40px;
+  justify-items: center;
 }
 
 .skill {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 11px;
+  gap: 15px;
+  width: 100%;
 }
 
 .skillImageContainer {
   background-color: var(--color-secondary);
-  border-radius: 100%;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 120px;
   height: 120px;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+  box-shadow: var(--shadow-standard);
+}
+
+.skill:hover .skillImageContainer {
+  transform: scale(1.1);
+  background-color: var(--color-primary);
 }
 
 .skillImageContainer img {
-  width: 75px;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
 .skill p {
-  font-size: 25px;
+  font-size: var(--font-size-base);
   font-family: var(--font-roboto);
-  font-weight: 500;
+  font-weight: 600;
+  text-align: center;
 }
 
 .bottomBlur {
   position: absolute;
   width: 50vw;
   height: 40vw;
-  min-width: 150px;
-  top: -350px;
-  right: -80vh;
-  border-radius: 764px;
-  background: rgba(14, 92, 63, 1);
-  filter: blur(100px);
+  max-width: 500px;
+  top: -100px;
+  right: -5%;
+  border-radius: 50%;
+  background: var(--color-blur-green);
+  filter: blur(80px);
   z-index: -1;
+  pointer-events: none;
 }
 
-@media (orientation: landscape) and (max-width: 992px) {
-  .bottomBlur {
-    min-width: unset;
-    width: 40vw;
-    height: 30vw;
-    right: -20vw;
-    top: -200px;
-  }	
-
-  .topBlur {
-    left: -5vw;
-  }
-
-  .bottomBlur {
-    right: 5vw;
-  }
-}
-
-@media screen and (max-width: 830px) {
-  .content {
-    flex-direction: column;
-    align-items: center;
-    gap: 34px;
-  }
-
+@media screen and (max-width: 600px) {
   .skills {
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 30px;
   }
 
-  .bottomBlur {
-    display: none;
+  .skillImageContainer {
+    width: 90px;
+    height: 90px;
+  }
+
+  .skillImageContainer img {
+    width: 45px;
+    height: 45px;
   }
 }
