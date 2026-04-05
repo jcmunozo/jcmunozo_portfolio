@@ -2,12 +2,14 @@
 
 .container {
   color: var(--color-text);
-  margin-top: var(--spacing-section);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - var(--navbar-height));
   margin-left: var(--margin-side-mobile);
   margin-right: var(--margin-side-mobile);
   position: relative;
   z-index: 1;
-  scroll-margin-top: 90px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -28,17 +30,27 @@
 
 .content {
   display: flex;
-  justify-content: center;
   width: 100%;
 }
 
 .skills {
   width: 100%;
-  max-width: 1000px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   justify-items: center;
+}
+
+@media screen and (min-width: 600px) {
+  .skills {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .skills {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 .skill {
@@ -79,26 +91,8 @@
   text-align: center;
 }
 
-.bottomBlur {
-  position: absolute;
-  width: 50vw;
-  height: 40vw;
-  max-width: 500px;
-  top: -100px;
-  right: -5%;
-  border-radius: 50%;
-  background: var(--color-blur-green);
-  filter: blur(80px);
-  z-index: -1;
-  pointer-events: none;
-}
 
-@media screen and (max-width: 600px) {
-  .skills {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 30px;
-  }
-
+@media screen and (max-width: 599px) {
   .skillImageContainer {
     width: 90px;
     height: 90px;

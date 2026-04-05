@@ -35,7 +35,6 @@ export const Experience = () => {
           })}
         </ul>
       </div>
-      <div className={styles.bottomBlur} />
     </section>
   );
 };

@@ -1,18 +1,29 @@
 [
   {
-    "role": "Full Stack Developer - Intern",
-    "organisation": "SLB, Oil and Gas Operations",
-    "startDate": "Juni, 2023",
-    "endDate": "December, 2024",
-    "experiences": ["I developed Angular components.", "I learned Azure CI/CD.", "Created an API proxy using Apigee."],
-    "imageSrc": "history/slb.jpeg"
-  },
-  {
     "role": "Integrations Developer Consultant",
     "organisation": "Inchcape DDC, Global Automotive Distributor",
-    "startDate": " ",
+    "startDate": "January, 2025",
     "endDate": "Present",
-    "experiences": ["Working on Integrations Development"],
+    "experiences": [
+      "Designing and optimizing API proxies using Apigee X.",
+      "Implemented improvements in proxy usage, configuration and performance.",
+      "Building Cloud Functions using Python and JavaScript on Google Cloud Platform.",
+      "Containerizing and orchestrating services with Docker and Kubernetes.",
+      "Deploying and managing infrastructure on Microsoft Azure."
+    ],
     "imageSrc": "history/inchcape.jpeg"
+  },
+  {
+    "role": "Full Stack Developer - Intern",
+    "organisation": "SLB, Oil and Gas Operations",
+    "startDate": "June, 2023",
+    "endDate": "December, 2024",
+    "experiences": [
+      "Built and maintained frontend features using Angular and jQuery.",
+      "Developed backend services and managed data with Microsoft SQL Server.",
+      "Created and managed API proxies using Apigee Edge.",
+      "Worked with Azure services including Pub/Sub messaging and CI/CD pipelines."
+    ],
+    "imageSrc": "history/slb.jpeg"
   }
 ]

@@ -5,6 +5,35 @@
   width: 100%;
   height: 100%;
 }
+
 body {
   overflow-x: hidden;
+}
+
+.blurTop {
+  position: fixed;
+  width: 45vw;
+  height: 45vw;
+  max-width: 700px;
+  top: -10vh;
+  left: -10%;
+  border-radius: 50%;
+  background: rgba(14, 92, 63, 0.6);
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blurBottom {
+  position: fixed;
+  width: 50vw;
+  height: 50vw;
+  max-width: 700px;
+  top: 20vh;
+  right: -10%;
+  border-radius: 50%;
+  background: rgba(25, 55, 109, 0.4);
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
 }

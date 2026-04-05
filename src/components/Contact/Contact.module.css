@@ -2,12 +2,11 @@
 
 .container {
   color: var(--color-text);
-  margin-top: var(--spacing-section);
-  background-color: var(--color-bg);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  min-height: calc(100vh - var(--navbar-height));
   width: 100%;
   padding: clamp(40px, 8vw, 80px) var(--margin-side-mobile);
   gap: 30px;
@@ -38,6 +37,12 @@
   align-items: flex-start;
   list-style: none;
   gap: 20px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .link a {

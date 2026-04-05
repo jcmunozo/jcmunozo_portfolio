@@ -29,9 +29,22 @@
   --breakpoint-mobile: 830px;
   --breakpoint-tablet: 1024px;
 
+  /* Navbar height (used for scroll-snap offset) */
+  --navbar-height: 70px;
+
+  /* Uniform section height: full viewport minus sticky navbar */
+  --section-height: calc(100vh - var(--navbar-height));
+
   /* Effects */
   --transition-fast: 0.3s ease-in-out;
   --transition-normal: 0.4s ease-in-out;
   --shadow-standard: 0 0 4px 0 rgba(0, 0, 0, 0.25);
   --shadow-card: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    /* Desktop navbar is taller due to larger padding-top */
+    --navbar-height: 110px;
+  }
 }

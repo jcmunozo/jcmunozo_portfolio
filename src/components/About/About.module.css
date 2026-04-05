@@ -2,14 +2,14 @@
 
 .container {
   position: relative;
-  background-color: rgba(12, 12, 12, 0.6);
-  border-radius: 15px;
-  padding: clamp(20px, 5vw, 60px);
-  margin-top: var(--spacing-section);
+  padding: 0;
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   z-index: 4;
   margin-left: var(--margin-side-mobile);
   margin-right: var(--margin-side-mobile);
-  scroll-margin-top: 90px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -34,6 +34,7 @@
   margin-top: 20px;
   z-index: 1;
   gap: 30px;
+  padding: 0 clamp(20px, 5vw, 60px);
 }
 
 .aboutItems {
@@ -81,9 +82,8 @@
 }
 
 @media screen and (max-width: 830px) {
-  .container {
-    background-color: transparent;
-    padding: 20px 0;
+  .content {
+    padding: 0;
   }
 
   .content {

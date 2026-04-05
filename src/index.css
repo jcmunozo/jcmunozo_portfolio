@@ -1,3 +1,5 @@
+@import "./vars.css";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,5 +8,20 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-padding-top: var(--navbar-height);
+}
+
+
+/* ── Scroll-driven scale + fade transition ───────────────────────
+   Two animations run on the same view() timeline:
+     sectionEnter → plays while the section enters  (grows + fades in)
+     sectionExit  → plays while the section exits   (shrinks + fades out)
+   Progress is tied to scroll position, not clock time, so the
+   effect is perfectly in sync with the snap movement.
+   @supports keeps it as progressive enhancement.
+────────────────────────────────────────────────────────────────── */
+section,
+footer {
+  will-change: transform, opacity;
+  transform-origin: center center;
 }

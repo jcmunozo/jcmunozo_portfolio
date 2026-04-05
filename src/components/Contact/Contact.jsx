@@ -24,12 +24,14 @@ export const Contact = () => {
 	    <img src={getImageUrl("contact/linkedinIcon.png")} alt="LinkedIn icon"/>
 	    <span>linkedin.com/in/jordanmuñoz</span>
 	  </a>
+	  <CopyButton text="https://www.linkedin.com/in/jordanmuñoz/" />
         </li>
         <li className={styles.link}>
           <a href="https://www.github.com/jcmunozo" target="_blank" rel="noopener noreferrer">
 	    <img src={getImageUrl("contact/githubIcon.png")} alt="Github icon" />
 	    <span>github.com/jcmunozo</span>
 	  </a>
+	  <CopyButton text="https://www.github.com/jcmunozo" />
         </li>
       </ul>
     </footer>

@@ -60,15 +60,17 @@
 @media screen and (max-width: 830px) {
   .navContent {
     padding-top: 20px;
+    position: relative;
   }
 
   .menu {
     position: absolute;
-    right: 5%;
+    top: 0;
+    right: 0;
     flex-direction: column;
     align-items: flex-end;
     gap: 11px;
-    z-index: 3;
+    z-index: 50;
   }
 
   .menuBtn {
@@ -90,7 +92,6 @@
 
   .menuOpen {
     display: flex;
-    z-index: 1;
   }
 }
 

@@ -1,11 +1,13 @@
 @import "@/vars.css";
 
 .container {
-  margin-top: var(--spacing-section);
   color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - var(--navbar-height));
   margin-left: var(--margin-side-mobile);
   margin-right: var(--margin-side-mobile);
-  scroll-margin-top: 90px;
 }
 
 @media screen and (min-width: 1024px) {
