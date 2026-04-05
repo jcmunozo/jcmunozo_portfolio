@@ -2,6 +2,7 @@
 
 .container {
   position: relative;
+  scroll-snap-align: start;
   padding: 0;
   min-height: calc(100vh - var(--navbar-height));
   display: flex;
@@ -15,6 +16,7 @@
 @media screen and (min-width: 1024px) {
   .container {
     margin-left: var(--margin-side-desktop);
+  scroll-snap-align: start;
     margin-right: var(--margin-side-desktop);
   }
 }

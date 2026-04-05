@@ -2,6 +2,7 @@
 
 .container {
   color: var(--color-text);
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,6 +14,7 @@
 @media screen and (min-width: 1024px) {
   .container {
     margin-left: var(--margin-side-desktop);
+  scroll-snap-align: start;
     margin-right: var(--margin-side-desktop);
   }
 }

@@ -2,6 +2,7 @@
 
 .container {
   position: relative;
+  scroll-snap-align: start;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,6 +15,7 @@
 @media screen and (min-width: 1024px) {
   .container {
     margin-left: 10%;
+  scroll-snap-align: start;
     margin-right: 10%;
   }
 }
@@ -114,6 +116,7 @@
 @media screen and (max-width: 830px) {
   .container {
     flex-direction: column-reverse;
+  scroll-snap-align: start;
     justify-content: center;
     gap: 12px;
     padding-top: 20px;

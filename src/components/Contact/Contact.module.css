@@ -2,6 +2,7 @@
 
 .container {
   color: var(--color-text);
+  scroll-snap-align: start;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -15,6 +16,7 @@
 @media screen and (min-width: 1024px) {
   .container {
     padding: 80px var(--margin-side-desktop);
+  scroll-snap-align: start;
   }
 }
 
@@ -67,6 +69,7 @@
 @media screen and (max-width: 830px) {
   .container {
     flex-direction: column;
+  scroll-snap-align: start;
     text-align: center;
     padding-bottom: 60px;
   }

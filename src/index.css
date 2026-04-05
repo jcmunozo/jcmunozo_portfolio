@@ -8,20 +8,57 @@
 }
 
 html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
   scroll-padding-top: var(--navbar-height);
 }
 
-
-/* ── Scroll-driven scale + fade transition ───────────────────────
-   Two animations run on the same view() timeline:
-     sectionEnter → plays while the section enters  (grows + fades in)
-     sectionExit  → plays while the section exits   (shrinks + fades out)
-   Progress is tied to scroll position, not clock time, so the
-   effect is perfectly in sync with the snap movement.
-   @supports keeps it as progressive enhancement.
+/* ── Cylinder scroll effect ──────────────────────────────────────
+   Sections behave as if attached to a vertical cylinder:
+   - Entering from below: small & tilted → full size & straight
+   - Exiting from top:    full size & straight → small & tilted
+   animation-timeline: view() ties progress to scroll position,
+   so the effect tracks exactly with the scrollbar.
 ────────────────────────────────────────────────────────────────── */
-section,
-footer {
-  will-change: transform, opacity;
-  transform-origin: center center;
+@supports (animation-timeline: view()) {
+  @keyframes sectionEnter {
+    from {
+      opacity: 0;
+      transform: perspective(1200px) scale(0.6) rotateX(28deg);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(1200px) scale(1) rotateX(0deg);
+    }
+  }
+
+  @keyframes sectionExit {
+    from {
+      opacity: 1;
+      transform: perspective(1200px) scale(1) rotateX(0deg);
+    }
+    to {
+      opacity: 0;
+      transform: perspective(1200px) scale(0.6) rotateX(-28deg);
+    }
+  }
+
+  section,
+  footer {
+    will-change: transform, opacity;
+    transform-origin: center center;
+    animation-name: sectionEnter, sectionExit;
+    animation-fill-mode: both, both;
+    animation-timing-function: ease-out, ease-in;
+    animation-timeline: view(), view();
+    animation-range-start: entry 0%,  exit 0%;
+    animation-range-end:   entry 50%, exit 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    section, footer {
+      animation: none;
+      will-change: auto;
+    }
+  }
 }

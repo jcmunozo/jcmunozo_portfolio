@@ -2,6 +2,7 @@
 
 .container {
   position: relative;
+  scroll-snap-align: start;
   z-index: 1;
   color: var(--color-text);
   display: flex;
@@ -15,6 +16,7 @@
 @media screen and (min-width: 1024px) {
   .container {
     margin-left: var(--margin-side-desktop);
+  scroll-snap-align: start;
     margin-right: var(--margin-side-desktop);
   }
 }
