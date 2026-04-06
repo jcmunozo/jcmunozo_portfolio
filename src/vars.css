@@ -3,43 +3,28 @@
   --color-text: #fff;
   --color-primary: #567cbc;
   --color-secondary: #19376d;
-  --color-dark: #0b2447;
   --color-bg: #121c1f;
   --color-accent: #00ed83;
-  --color-accent-dim: rgba(0, 237, 131, 0.25);
-  --color-blur-green: rgba(14, 92, 63, 0.6);
-  --color-blur-blue: rgba(25, 55, 109, 0.4);
 
   /* Fonts */
-  --font-main: "Outfit", Arial, Helvetica, sans-serif;
   --font-roboto: "Roboto", sans-serif;
 
   /* Font Sizes */
-  --font-size-hero-title: clamp(2.5rem, 8vw, 4.5rem);
   --font-size-section-title: clamp(1.8rem, 5vw, 2.2rem);
   --font-size-card-title: clamp(1.2rem, 3vw, 1.8rem);
   --font-size-base: clamp(1rem, 2vw, 1.25rem);
 
   /* Spacing */
-  --spacing-section: clamp(60px, 10vw, 120px);
   --margin-side-mobile: 5%;
   --margin-side-desktop: 10%;
 
-  /* Breakpoints */
-  --breakpoint-mobile: 830px;
-  --breakpoint-tablet: 1024px;
-
-  /* Navbar height (used for scroll-snap offset) */
+  /* Navbar height (used for scroll offset) */
   --navbar-height: 70px;
-
-  /* Uniform section height: full viewport minus sticky navbar */
-  --section-height: calc(100vh - var(--navbar-height));
 
   /* Effects */
   --transition-fast: 0.3s ease-in-out;
   --transition-normal: 0.4s ease-in-out;
   --shadow-standard: 0 0 4px 0 rgba(0, 0, 0, 0.25);
-  --shadow-card: 0 10px 15px rgba(0,0,0,0.1);
 }
 
 @media screen and (min-width: 1024px) {

@@ -60,16 +60,33 @@
   transform: scale(1.02);
 }
 
-.imageCover {            
+.imageCover {
   width: clamp(70px, 12vw, 120px);
   height: clamp(70px, 12vw, 120px);
   flex-shrink: 0;
   border-radius: 50%;
-  background: #20496d;
-  box-shadow: var(--shadow-standard);
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 55%),
+    #20496d;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    inset 0  1.5px 0   rgba(255, 255, 255, 0.25),
+    inset 0 -2px   4px rgba(0, 0, 0, 0.22),
+    0 4px 18px         rgba(86, 124, 188, 0.40),
+    0 2px  5px         rgba(0, 0, 0, 0.30);
+  transition: box-shadow var(--transition-fast);
+}
+
+.experienceItem:hover .imageCover {
+  box-shadow:
+    inset 0  1.5px 0   rgba(255, 255, 255, 0.30),
+    inset 0 -2px   4px rgba(0, 0, 0, 0.22),
+    0 6px 24px         rgba(86, 124, 188, 0.55),
+    0 2px  8px         rgba(0, 0, 0, 0.30);
 }
 
 .experienceItem img {

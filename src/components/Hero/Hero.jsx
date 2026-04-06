@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
 import me from "@/data/hero.json";
@@ -38,11 +38,15 @@ export const Hero = () => {
 	  Download CV
 	</a>
       </div>
-      <img
-        src={getImageUrl("hero/me.png")}
-        alt="Hero image of me"
-        className={styles.heroImg}
-      />
+      <div className={styles.imageWrapper}>
+        <div className={styles.blob1} />
+        <div className={styles.blob2} />
+        <img
+          src={getImageUrl("hero/me.png")}
+          alt="Hero image of me"
+          className={styles.heroImg}
+        />
+      </div>
     </section>
   );
 };

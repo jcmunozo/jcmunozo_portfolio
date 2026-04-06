@@ -6,6 +6,7 @@ import {Experience} from './components/Experience/Experience'
 import {Projects} from './components/Projects/Projects'
 import {Contact} from './components/Contact/Contact'
 import {Skills} from './components/Skills/Skills'
+import {ScrollHint} from './components/ScrollHint/ScrollHint'
 
 function App() {
   return <div className={styles.App}>
@@ -18,6 +19,7 @@ function App() {
     <Experience />
     <Projects />
     <Contact />
+    <ScrollHint />
   </div>;
 }
 

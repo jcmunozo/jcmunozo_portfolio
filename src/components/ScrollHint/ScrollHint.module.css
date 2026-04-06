@@ -1,0 +1,88 @@
+@import "@/vars.css";
+
+/* ── Container ── bottom-center by default (top and bottom of page) ── */
+.container {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 100;
+}
+
+/* Mid-scroll: pill on the right, vertically centered */
+.bothVisible {
+  left: auto;
+  right: 24px;
+  transform: none;
+  bottom: 50%;
+  translate: 0 50%;
+  gap: 4px;
+  padding: 10px 8px;
+  border-radius: 32px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 237, 131, 0.2);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 0 0 1px rgba(0, 237, 131, 0.05);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 237, 131, 0.08);
+  border: 1.5px solid rgba(0, 237, 131, 0.35);
+  color: #00ed83;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.25s, box-shadow 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.btn:hover {
+  background: rgba(0, 237, 131, 0.18);
+  border-color: rgba(0, 237, 131, 0.7);
+  box-shadow: 0 0 14px rgba(0, 237, 131, 0.35), 0 0 4px rgba(0, 237, 131, 0.2);
+  transform: scale(1.1);
+}
+
+/* ── Bounce animations (single arrow only) ───────────────────── */
+.bounceDown {
+  animation: bounceDown 2s infinite ease-in-out;
+}
+
+.bounceUp {
+  animation: bounceUp 2s infinite ease-in-out;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(7px); }
+}
+
+@keyframes bounceUp {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-7px); }
+}
+
+/* ── Mobile ──────────────────────────────────────────────────── */
+@media screen and (max-width: 830px) {
+  .bothVisible {
+    display: none;
+  }
+
+  .upOnly {
+    bottom: auto;
+    top: calc(var(--navbar-height) + 12px);
+  }
+}
