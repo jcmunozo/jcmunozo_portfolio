@@ -23,7 +23,6 @@ export const Skills = () => {
           })}
         </div>
       </div>
-      <div className={styles.bottomBlur} />
     </section>
   );
 };

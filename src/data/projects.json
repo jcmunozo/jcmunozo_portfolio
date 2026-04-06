@@ -30,10 +30,9 @@
     "title": "RestBook",
     "imageSrc": "projects/restbook.png",
     "description": "A basic Rest full API for managing books. Includes swagger documentation.",
-    "skills": ["projects/java.png", "projects/springboot.png", "projects/postgresql.png"],
-    "skills": [ 
+    "skills": [
       {"name":"Java","url":"projects/java.png"},
-      {"name":"PostgreSQL","url":"skills/postgres.png"}, 
+      {"name":"PostgreSQL","url":"skills/postgres.png"},
       {"name":"Spring Boot","url":"projects/springboot.png"},
       {"name":"Docker","url":"skills/docker.png"}
     ],

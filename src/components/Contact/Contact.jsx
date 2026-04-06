@@ -8,8 +8,8 @@ export const Contact = () => {
   return (
     <footer id="contact" className={styles.container}>
       <div className={styles.text}>
-        <h2>Contact</h2>
-        <p>Let’s connect!</p>
+        <h2>Let’s talk</h2>
+        <p>Open to new opportunities — reach out and let’s make something great.</p>
       </div>
       <ul className={styles.links}>
         <li className={styles.link}>
@@ -24,12 +24,14 @@ export const Contact = () => {
 	    <img src={getImageUrl("contact/linkedinIcon.png")} alt="LinkedIn icon"/>
 	    <span>linkedin.com/in/jordanmuñoz</span>
 	  </a>
+	  <CopyButton text="https://www.linkedin.com/in/jordanmuñoz/" />
         </li>
         <li className={styles.link}>
           <a href="https://www.github.com/jcmunozo" target="_blank" rel="noopener noreferrer">
 	    <img src={getImageUrl("contact/githubIcon.png")} alt="Github icon" />
 	    <span>github.com/jcmunozo</span>
 	  </a>
+	  <CopyButton text="https://www.github.com/jcmunozo" />
         </li>
       </ul>
     </footer>

@@ -3,9 +3,33 @@
   --color-text: #fff;
   --color-primary: #567cbc;
   --color-secondary: #19376d;
-  --color-dark: #0b2447;
   --color-bg: #121c1f;
+  --color-accent: #00ed83;
 
   /* Fonts */
-  --font-robot: "Roboto";
+  --font-roboto: "Roboto", sans-serif;
+
+  /* Font Sizes */
+  --font-size-section-title: clamp(1.8rem, 5vw, 2.2rem);
+  --font-size-card-title: clamp(1.2rem, 3vw, 1.8rem);
+  --font-size-base: clamp(1rem, 2vw, 1.25rem);
+
+  /* Spacing */
+  --margin-side-mobile: 5%;
+  --margin-side-desktop: 10%;
+
+  /* Navbar height (used for scroll offset) */
+  --navbar-height: 70px;
+
+  /* Effects */
+  --transition-fast: 0.3s ease-in-out;
+  --transition-normal: 0.4s ease-in-out;
+  --shadow-standard: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    /* Desktop navbar is taller due to larger padding-top */
+    --navbar-height: 110px;
+  }
 }

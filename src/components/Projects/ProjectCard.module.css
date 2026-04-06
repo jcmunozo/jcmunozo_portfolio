@@ -3,82 +3,119 @@
 .container {
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: 15px;
   background: linear-gradient(180deg, #182f55 0%, #0e5c3f 100%);
-  padding: 18px 24px;
-  max-width: 345px;
+  padding: 24px;
+  max-width: 350px;
+  width: 100%;
   z-index: 1;
+  transition: transform var(--transition-fast);
+  box-shadow: var(--shadow-standard);
 }
 
-.imageSkill {
-  width:50px;
-  height:50px;
+.container:hover {
+  transform: scale(1.02);
 }
 
 .image {
+  width: 100%;
+  aspect-ratio: 16/9;
   border-radius: 10px;
   background: #5469ba;
-  box-shadow: 
-      -8px -8px 16px rgba(0, 0, 0, 0.2),
-      8px 8px 16px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 26px;
+  margin-bottom: 20px;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .title {
-  font-size: 25px;
+  font-size: var(--font-size-card-title);
   font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .description {
-  margin-top: 6px;
-  font-size: 25px;
+  font-size: var(--font-size-base);
   font-weight: 400;
-}
-
-.techs {
-  margin-top:6px;
-  font-size: 25px;
-  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 15px;
 }
 
 .skills {
-  margin-top: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 10px;
   list-style: none;
+  margin-bottom: 25px;
 }
 
 .skill {
-  border-radius: 100%;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+}
+
+.skill img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  margin-top: auto;
 }
 
 .link {
   text-decoration: none;
-  display: inline-block;
+  flex: 1;
   color: var(--color-text);
-  font-size: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
   text-align: center;
-  border-radius: 10px;
-  background: var(--color-primary);
-  margin-top: 2rem;
-  padding: 1rem;
-  border: 3px solid var(--color-primary);
-  box-sizing: border-box;
+  border-radius: 50px;
+  padding: 10px;
+
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.20) 0%, transparent 55%),
+    var(--color-primary);
+
+  border: 1px solid rgba(255, 255, 255, 0.20);
+
+  box-shadow:
+    inset 0  1.5px 0   rgba(255, 255, 255, 0.28),
+    inset 0 -2px   4px rgba(0, 0, 0, 0.22),
+    0 4px 18px         rgba(86, 124, 188, 0.45),
+    0 2px  5px         rgba(0, 0, 0, 0.25);
+
+  transition: all var(--transition-fast);
+  cursor: pointer;
 }
 
 .link:hover {
-  background-color: transparent;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 55%),
+    transparent;
   color: var(--color-primary);
-  border: 3px solid var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 4px 18px    rgba(86, 124, 188, 0.25),
+    0 0   20px    rgba(86, 124, 188, 0.12);
 }
+
 

@@ -1,3 +1,5 @@
+@import "./vars.css";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,4 +9,64 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+section,
+footer {
+  scroll-margin-top: calc(var(--navbar-height) + 20px);
+}
+
+/* ── Depth scroll effect ─────────────────────────────────────────
+   Sections scale up as they enter and scale down as they exit,
+   creating a smooth zoom-from-behind feel that tracks 1:1 with
+   the scroll position (animation-timeline: view()).
+────────────────────────────────────────────────────────────────── */
+@supports (animation-timeline: view()) {
+  @keyframes sectionEnter {
+    from {
+      opacity: 0;
+      transform: scale(0.82);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes sectionExit {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.82);
+    }
+  }
+
+  section,
+  footer {
+    will-change: transform, opacity;
+    transform-origin: center center;
+    animation-name: sectionEnter, sectionExit;
+    animation-fill-mode: both, forwards;
+    animation-timing-function: linear, linear;
+    animation-timeline: view(), view();
+    animation-range-start: entry 0%,  exit 35%;
+    animation-range-end:   entry 35%, exit 100%;
+  }
+
+  @media screen and (max-width: 830px) {
+    section, footer {
+      animation-range-start: entry 0%,  exit 55%;
+      animation-range-end:   entry 30%, exit 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    section, footer {
+      animation: none;
+      will-change: auto;
+    }
+  }
 }

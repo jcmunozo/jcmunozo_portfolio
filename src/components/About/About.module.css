@@ -2,19 +2,28 @@
 
 .container {
   position: relative;
-  background-color: rgba(12, 12, 12, 0.6);
-  border-radius: 15px;
-  padding: 73px;
-  margin-top: 129px;
+  scroll-snap-align: start;
+  padding: 0;
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   z-index: 4;
-  margin-left: 10%;
-  margin-right: 10%;
-  scroll-margin-top: 90px;
+  margin-left: var(--margin-side-mobile);
+  margin-right: var(--margin-side-mobile);
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: var(--margin-side-desktop);
+  scroll-snap-align: start;
+    margin-right: var(--margin-side-desktop);
+  }
 }
 
 .title {
   color: var(--color-text);
-  font-size: 35px;
+  font-size: var(--font-size-section-title);
   font-weight: 700;
   letter-spacing: 1.75px;
   text-transform: uppercase;
@@ -26,13 +35,15 @@
   align-items: center;
   margin-top: 20px;
   z-index: 1;
+  gap: 30px;
+  padding: 0 clamp(20px, 5vw, 60px);
 }
 
 .aboutItems {
   color: var(--color-text);
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
 }
 
 .aboutItem {
@@ -41,15 +52,15 @@
   align-items: center;
   border-radius: 20px;
   list-style: none;
-  padding: 25px;
+  padding: 20px;
   background-image: linear-gradient(
     90deg,
-    rgba(165, 215, 232, 0.42) 0%,
+    rgba(165, 215, 232, 0.2) 0%,
     rgba(255, 255, 255, 0) 100%
   );
   background-size: 0 100%;
   background-repeat: no-repeat;
-  transition: 0.4s;
+  transition: var(--transition-normal);
 }
 
 .aboutItem:hover {
@@ -57,25 +68,24 @@
 }
 
 .aboutItem h3 {
-  font-size: 25px;
+  font-size: var(--font-size-card-title);
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .aboutItem p {
-  font-size: 25px;
+  font-size: var(--font-size-base);
+  line-height: 1.4;
 }
 
 .aboutItemImage {
-  width: 150px;
-  margin-right: 10px;
+  width: clamp(60px, 10vw, 120px);
+  margin-right: 15px;
 }
 
 @media screen and (max-width: 830px) {
-  .container {
-    background-color: transparent;
-    padding-left: 0;
-    padding-right: 0;
+  .content {
+    padding: 0;
   }
 
   .content {
@@ -84,26 +94,18 @@
 
   .aboutItems {
     margin-top: 29px;
+    gap: 20px;
   }
 
   .aboutItem {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .aboutItemImage {
-    width: 100px;
-    margin-right: 10px;
+    padding: 15px;
+    background-size: 100% 100%;
+    background-image: linear-gradient(
+      180deg,
+      rgba(165, 215, 232, 0.1) 0%,
+      transparent 100%
+    );
   }
 }
 
-@media screen and (max-width: 430px) {
-  .aboutItem {
-    flex-direction: column;
-    gap: 10px;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-}
 

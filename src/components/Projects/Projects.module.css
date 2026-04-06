@@ -1,15 +1,26 @@
 @import "@/vars.css";
 
 .container {
-  margin-top: 76px;
   color: var(--color-text);
-  margin-left: 10%;
-  margin-right: 10%;
-  scroll-margin-top: 90px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - var(--navbar-height));
+  margin-left: var(--margin-side-mobile);
+  margin-right: var(--margin-side-mobile);
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: var(--margin-side-desktop);
+  scroll-snap-align: start;
+    margin-right: var(--margin-side-desktop);
+  }
 }
 
 .title {
-  font-size: 35px;
+  font-size: var(--font-size-section-title);
   font-weight: 700;
   letter-spacing: 1.75px;
   text-transform: uppercase;
@@ -24,6 +35,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 25px;
   width: 100%;
 }
+
