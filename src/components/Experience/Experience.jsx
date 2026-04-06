@@ -13,23 +13,24 @@ export const Experience = () => {
           {experience.map((experienceItem, id) => {
             return (
               <li key={id} className={styles.experienceItem}>
-		<div className={styles.imageCover}>
-		  <img
-		    src={getImageUrl(experienceItem.imageSrc)}
-		    alt={`${experienceItem.organisation} Logo`}
-		  />
-		</div>
-                <div className={styles.experienceItemDetails}>
-                  <h3>{`${experienceItem.role}`}</h3>
-		  <p>{`${experienceItem.organisation}`}</p>
-		  <br/>
-                  <p>{`${experienceItem.startDate} - ${experienceItem.endDate}`}</p>
-                  <ul>
-                    {experienceItem.experiences.map((experience, id) => {
-                      return <li key={id}>{experience}</li>;
-                    })}
-                  </ul>
+                <div className={styles.experienceItemHeader}>
+                  <div className={styles.experienceItemDetails}>
+                    <h3>{`${experienceItem.role}`}</h3>
+                    <p>{`${experienceItem.organisation}`}</p>
+                    <p>{`${experienceItem.startDate} - ${experienceItem.endDate}`}</p>
+                  </div>
+                  <div className={styles.imageCover}>
+                    <img
+                      src={getImageUrl(experienceItem.imageSrc)}
+                      alt={`${experienceItem.organisation} Logo`}
+                    />
+                  </div>
                 </div>
+                <ul className={styles.experienceBullets}>
+                  {experienceItem.experiences.map((experience, id) => {
+                    return <li key={id}>{experience}</li>;
+                  })}
+                </ul>
               </li>
             );
           })}

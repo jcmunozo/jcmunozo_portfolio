@@ -46,14 +46,21 @@
 .experienceItem {
   flex: 1;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: clamp(20px, 4vw, 40px);
+  flex-direction: column;
+  gap: 16px;
   background: linear-gradient(90deg, #182f55 0%, #0e5c3f 100%);
   border-radius: 15px;
   padding: 25px;
   transition: transform var(--transition-fast);
   box-shadow: var(--shadow-standard);
+}
+
+.experienceItemHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 3vw, 32px);
 }
 
 .experienceItem:hover {
@@ -98,7 +105,11 @@
 
 .experienceItemDetails {
   font-family: var(--font-roboto);
-  flex-grow: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .experienceItemDetails h3 {
@@ -117,18 +128,20 @@
   border-radius: 6px;
 }
 
-.experienceItemDetails ul {
+.experienceBullets {
   list-style-position: inside;
-  font-size: var(--font-size-base);
   list-style-type: disc;
+  font-size: var(--font-size-base);
+  font-family: var(--font-roboto);
+  padding: 0;
 }
 
-.experienceItemDetails ul li {
+.experienceBullets li {
   margin-top: 6px;
   line-height: 1.4;
 }
 
-.experienceItemDetails ul li::marker {
+.experienceBullets li::marker {
   color: var(--color-accent);
 }
 
@@ -139,13 +152,20 @@
   }
 
   .experienceItem {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
     padding: 20px;
   }
 
-  .experienceItemDetails ul {
+  .experienceItemHeader {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .experienceItemDetails {
+    align-items: center;
+    text-align: center;
+  }
+
+  .experienceBullets {
     text-align: left;
   }
 }
