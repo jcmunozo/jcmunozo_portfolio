@@ -2,17 +2,17 @@
   {
     "title":"Frontend Development",
     "img":"about/ui.png",
-    "description":"Experienced in building responsive and optimized web applications, focusing on ideal UX/UI solutions to make our frontend more persuasive."
+    "description":"Experienced in building responsive and performant web applications, with a strong focus on UX/UI — crafting interfaces that are both intuitive and visually compelling."
   },
   {
     "title":"Backend Development",
     "img":"about/db.png",
-    "description":"I'm a Linux user with solid understanding of databases, expertise in service-based architectures and API development."
+    "description":"Linux user with solid experience in relational databases, service-based architectures, and REST API development. Comfortable designing systems that are clean, scalable, and maintainable."
   },
   {
     "title":"Cloud",
     "img":"about/cloud.png",
-    "description":"Expertise in Azure cloud services, particularly Azure DevOps for CI/CD, with knowledge of workflows to effectively administer and deploy cloud solutions."
+    "description":"Hands-on experience with Azure and GCP cloud services. Skilled in Azure DevOps for CI/CD pipelines and familiar with Apigee for API management, enabling reliable and scalable cloud deployments."
   },
   {
     "title":"IA",

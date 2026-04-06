@@ -8,8 +8,8 @@ export const Contact = () => {
   return (
     <footer id="contact" className={styles.container}>
       <div className={styles.text}>
-        <h2>Contact</h2>
-        <p>Let’s connect!</p>
+        <h2>Let’s talk</h2>
+        <p>Open to new opportunities — reach out and let’s make something great.</p>
       </div>
       <ul className={styles.links}>
         <li className={styles.link}>
