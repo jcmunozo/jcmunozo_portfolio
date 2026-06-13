@@ -74,9 +74,8 @@
 
 .revealAccent {
   position: absolute;
-  left: 50%;
-  bottom: -20px;
-  transform: translateX(-50%);
+  left: 0;
+  bottom: -10px;
   height: 2px;
   width: 0;
   border-radius: 2px;
@@ -99,6 +98,21 @@
 
 @keyframes revealAccent {
   to {
+    width: 100%;
+  }
+}
+
+/* Shorter, centered accent only on mobile */
+@media screen and (max-width: 830px) {
+  .revealAccent {
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: revealAccentMobile;
+  }
+}
+
+@keyframes revealAccentMobile {
+  to {
     width: 55%;
   }
 }
@@ -113,6 +127,13 @@
 
   .revealAccent {
     animation: none;
+    width: 100%;
+  }
+}
+
+/* Keep the shorter accent for reduced-motion users on mobile */
+@media screen and (max-width: 830px) and (prefers-reduced-motion: reduce) {
+  .revealAccent {
     width: 55%;
   }
 }
