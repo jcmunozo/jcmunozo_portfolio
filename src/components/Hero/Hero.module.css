@@ -51,42 +51,70 @@
   font-family: var(--font-roboto);
   margin-bottom: 40px;
   line-height: 1.5;
+  min-height: 1.5em;
 }
 
-.cvBtn {
-  text-decoration: none;
-  border-radius: 50px;
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  font-weight: 600;
-  padding: 13px 30px;
-  color: var(--color-text);
-
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.20) 0%, transparent 55%),
-    var(--color-primary);
-
-  border: 1px solid rgba(255, 255, 255, 0.20);
-
-  box-shadow:
-    inset 0  1.5px 0   rgba(255, 255, 255, 0.28),
-    inset 0 -2px   4px rgba(0,   0,   0,   0.22),
-    0 4px 18px         rgba(86, 124, 188, 0.45),
-    0 2px  5px         rgba(0,   0,   0,   0.25);
-
-  transition: all 0.3s;
-  cursor: pointer;
+/* --- Professional staggered word reveal --- */
+.reveal {
+  position: relative;
+  display: inline-block;
 }
 
-.cvBtn:hover {
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 55%),
-    transparent;
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 4px 18px    rgba(86, 124, 188, 0.25),
-    0 0   20px    rgba(86, 124, 188, 0.12);
+.revealWord {
+  display: inline-block;
+  white-space: pre;
+  /* Solid fill so words stay visible even inside the gradient-clipped title */
+  -webkit-text-fill-color: var(--color-text);
+  opacity: 0;
+  transform: translateY(0.5em);
+  filter: blur(8px);
+  will-change: transform, filter, opacity;
+  animation: revealWord 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.revealAccent {
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-accent)
+  );
+  box-shadow: 0 0 12px rgba(0, 237, 131, 0.45);
+  animation: revealAccent 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes revealWord {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes revealAccent {
+  to {
+    width: 55%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revealWord {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .revealAccent {
+    animation: none;
+    width: 55%;
+  }
 }
 
 .imageWrapper {
@@ -194,18 +222,6 @@
     border-radius: 62% 38% 55% 45% / 52% 60% 40% 48%;
     box-shadow: 0 12px 35px rgba(86, 124, 188, 0.35), 0 4px 12px rgba(86, 124, 188, 0.2);
   }
-}
-
-.letter {
-  display: inline-block;
-  -webkit-text-fill-color: var(--color-text);
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.letterPushing {
-  display: inline-block;
-  -webkit-text-fill-color: var(--color-text);
-  transition: transform 0.08s ease-out;
 }
 
 @media screen and (max-width: 830px) {
