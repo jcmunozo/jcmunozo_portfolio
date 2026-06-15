@@ -6,7 +6,7 @@
     "skills": [ 
       {"name":"Python","url":"skills/python.png"},
       {"name":"PostgreSQL","url":"skills/postgres.png"}, 
-      {"name":"Redis","url":"projects/redis.png"},
+      {"name":"Redis","url":"skills/redis.png"},
       {"name":"Docker","url":"skills/docker.png"}
     ],
 
@@ -18,7 +18,7 @@
     "imageSrc": "projects/travelgram.png",
     "description": "A useful Instagram clone to learn Django and web development concepts.",
     "skills": [ 
-      {"name":"Django","url":"projects/django.png"},
+      {"name":"Django","url":"skills/django.png"},
       {"name":"PostgreSQL","url":"skills/postgres.png"}, 
       {"name":"CSS","url":"skills/css.png"},
       {"name":"Docker","url":"skills/docker.png"}
@@ -27,16 +27,16 @@
     "source": "https://github.com/jcmunozo/Travelgram"
   },
   {
-    "title": "RestBook",
-    "imageSrc": "projects/restbook.png",
-    "description": "A basic Rest full API for managing books. Includes swagger documentation.",
+    "title": "Sprage",
+    "imageSrc": "projects/sprage.png",
+    "description": "A user-centric web page for learning idioms, vocabulary, and grammar using a Spaced Repetition System (SRS)",
     "skills": [
-      {"name":"Java","url":"projects/java.png"},
-      {"name":"PostgreSQL","url":"skills/postgres.png"},
-      {"name":"Spring Boot","url":"projects/springboot.png"},
-      {"name":"Docker","url":"skills/docker.png"}
+      {"name":"React","url":"skills/react.png"},
+      {"name":"MongoDB","url":"skills/mongoDB.png"},
+      {"name":"NestJS","url":"skills/nestJS.png"},
+      {"name":"TypeScript","url":"skills/typeScript.png"}
     ],
     "demo": "https://www.example.com",
-    "source": "https://github.com/jcmunozo/RestBook_Backend"
+    "source": "https://github.com/jcmunozo/Sprage"
   }
 ]

@@ -19,10 +19,6 @@
   position: relative;
   border-radius: 20px;
 
-  /* Cap the width and center so the bar isn't full-width on large screens */
-  max-width: 1080px;
-  margin-inline: auto;
-
   /* Thin rim + translucency */
   border: 1px solid rgba(255, 255, 255, 0.10);
 
@@ -188,8 +184,13 @@
     display: none;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 40px;
+
+    /* Allow scrolling if the menu is taller than the viewport (e.g. landscape).
+       `safe` keeps content from being clipped above the scroll start. */
+    overflow-y: auto;
+    justify-content: safe center;
+    padding: 24px;
 
     background:
       radial-gradient(
@@ -241,6 +242,34 @@
   .navGroupOpen .menuItems li:nth-child(5) { animation-delay: 0.26s; }
   .navGroupOpen .menuItems li:nth-child(6) { animation-delay: 0.31s; }
   .navGroupOpen .cvBtn { animation-delay: 0.38s; }
+}
+
+/* ── Short viewports (e.g. phone in landscape) ───────────────────
+   Compress spacing and font sizes so every option + the CV button
+   fit without being cut off; the overlay scrolls if still too tall. */
+@media screen and (max-width: 830px) and (max-height: 520px) {
+  .navGroup {
+    gap: 16px;
+    padding: 56px 24px 28px;
+  }
+
+  .menuItems {
+    gap: 14px;
+  }
+
+  .menuItems a {
+    font-size: 1.25rem;
+  }
+
+  .cvBtn {
+    font-size: 1.1rem;
+    padding: 9px 22px;
+  }
+
+  .cvBtn svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 @keyframes overlayIn {

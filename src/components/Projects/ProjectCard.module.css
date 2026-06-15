@@ -3,49 +3,92 @@
 .container {
   display: flex;
   flex-direction: column;
-  border-radius: 15px;
+  position: relative;
+  border-radius: 18px;
   background: linear-gradient(180deg, #182f55 0%, #0e5c3f 100%);
-  padding: 24px;
+  padding: 22px;
   max-width: 350px;
   width: 100%;
   z-index: 1;
-  transition: transform var(--transition-fast);
-  box-shadow: var(--shadow-standard);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Accent glow line across the top edge */
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  opacity: 0;
+  transition: opacity var(--transition-fast);
 }
 
 .container:hover {
-  transform: scale(1.02);
+  transform: translateY(-6px);
+  border-color: rgba(0, 237, 131, 0.35);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.4),
+    0 0 28px rgba(0, 237, 131, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.container:hover::before {
+  opacity: 1;
+}
+
+.imageButton {
+  display: block;
+  width: auto;
+  padding: 0;
+  border: none;
+  /* Bleed to the top and side edges of the card (cancels container padding) */
+  margin: -22px -22px 20px;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+  background: transparent;
+  cursor: pointer;
+}
+
+.imageButton:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 .image {
   width: 100%;
   aspect-ratio: 16/9;
-  border-radius: 10px;
   background: #5469ba;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-normal);
 }
 
-.image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.container:hover .image {
+  transform: scale(1.04);
 }
 
 .title {
   font-size: var(--font-size-card-title);
   font-weight: 700;
   margin-bottom: 10px;
+  letter-spacing: 0.3px;
 }
 
 .description {
   font-size: var(--font-size-base);
   font-weight: 400;
   line-height: 1.5;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .skills {
@@ -55,6 +98,7 @@
   gap: 10px;
   list-style: none;
   margin-bottom: 25px;
+  margin-top: auto;
 }
 
 .skill {
@@ -66,10 +110,20 @@
   width: 40px;
   height: 40px;
   padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.skill:hover {
+  transform: translateY(-3px);
+  background-color: var(--color-primary);
 }
 
 .skill img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 
@@ -82,7 +136,7 @@
 
 .link {
   text-decoration: none;
-  flex: 1;
+  flex: 0 0 auto;
   color: var(--color-text);
   font-size: 1.1rem;
   font-weight: 600;
@@ -118,4 +172,74 @@
     0 0   20px    rgba(86, 124, 188, 0.12);
 }
 
+/* Fullscreen image preview */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5vmin;
+  background: rgba(7, 12, 14, 0.85);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  animation: lightboxFade var(--transition-fast);
+}
+
+.lightboxImage {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  cursor: default;
+  animation: lightboxZoom var(--transition-fast);
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.lightboxClose:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(1.05);
+}
+
+@keyframes lightboxFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lightboxZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 

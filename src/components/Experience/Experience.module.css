@@ -129,16 +129,17 @@
 }
 
 .experienceBullets {
-  list-style-position: inside;
+  list-style-position: outside;
   list-style-type: disc;
   font-size: var(--font-size-base);
   font-family: var(--font-roboto);
-  padding: 0;
+  padding-left: 1.25em;
 }
 
 .experienceBullets li {
   margin-top: 6px;
   line-height: 1.4;
+  padding-left: 0.35em;
 }
 
 .experienceBullets li::marker {

@@ -75,9 +75,10 @@ export const Navbar = () => {
 	    <a
 	      className={styles.cvBtn}
 	      href="/cv_Jordan_Munoz.pdf"
-	      download
-	      aria-label="Download CV"
-	      title="Download CV"
+	      target="_blank"
+	      rel="noopener noreferrer"
+	      aria-label="Open CV"
+	      title="Open CV"
 	      onClick={() => setMenuOpen(false)}
 	    >
 	      <svg
