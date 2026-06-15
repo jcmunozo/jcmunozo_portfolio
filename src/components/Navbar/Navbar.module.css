@@ -5,7 +5,7 @@
   position: sticky;
   top: 0;
   z-index: 30;
-  padding: 10px var(--margin-side-mobile);
+  padding: 16px var(--margin-side-mobile) 8px;
 }
 
 /* ── Pill with water-drop gloss ──────────────────────────────── */
@@ -13,17 +13,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: clamp(24px, 4vw, 64px);
   padding: 14px 28px;
   z-index: 2;
   position: relative;
   border-radius: 20px;
-
-  /* Frosted glass base + diagonal light refraction */
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 55%),
-    rgba(6, 14, 24, 0.65);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
 
   /* Thin rim + translucency */
   border: 1px solid rgba(255, 255, 255, 0.10);
@@ -37,9 +31,26 @@
     0  0   50px        rgba(0, 237, 131, 0.05);
 }
 
+/* Frosted glass lives on a pseudo-element so .navContent itself isn't a
+   containing block for the fixed mobile overlay (backdrop-filter would
+   otherwise trap position:fixed descendants inside the navbar pill). */
+.navContent::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 55%),
+    rgba(6, 14, 24, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
 @media screen and (min-width: 1024px) {
   .navbar {
-    padding: 14px var(--margin-side-desktop);
+    padding: 24px var(--margin-side-desktop) 10px;
   }
 
   .navContent {
@@ -63,12 +74,80 @@
 
 .menu {
   display: flex;
+  align-items: center;
+}
+
+/* Holds the links + CV button. On desktop it's an inline row;
+   on mobile it becomes the fullscreen blurred overlay. */
+.navGroup {
+  display: flex;
+  align-items: center;
+  gap: 36px;
 }
 
 .menuItems {
   display: flex;
-  gap: 47px;
+  gap: clamp(20px, 2.2vw, 40px);
   list-style: none;
+}
+
+/* ── CV download — glass "ghost" pill that fits the navbar gloss ── */
+.cvBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 9px 18px;
+  border-radius: 50px;
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--color-accent);
+
+  /* Same diagonal gloss as the nav pill, tinted with the accent */
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.10) 0%, transparent 55%),
+    rgba(0, 237, 131, 0.07);
+  border: 1px solid rgba(0, 237, 131, 0.40);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.20),
+    0 0 18px rgba(0, 237, 131, 0.10);
+
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.cvBtn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cvBtn:hover {
+  color: var(--color-bg);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, transparent 55%),
+    var(--color-accent);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 6px 20px rgba(0, 237, 131, 0.35),
+    0 0 28px rgba(0, 237, 131, 0.25);
+}
+
+.cvBtn:active {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cvBtn,
+  .cvBtn:hover {
+    transform: none;
+  }
 }
 
 .menuItems a {
@@ -88,45 +167,131 @@
     padding: 12px 20px;
   }
 
-  .menu {
-    position: relative;
-    flex-direction: row;
-    align-items: center;
-    z-index: 50;
-  }
-
+  /* Hamburger / close toggle stays in the bar, above the overlay */
   .menuBtn {
     display: block;
     cursor: pointer;
-    width: 28px;
+    width: 30px;
+    position: relative;
+    z-index: 60;
   }
 
-  .menuItems {
-    position: absolute;
-    top: calc(100% + 14px);
-    right: 0;
+  /* Fullscreen, centered, dark + blurred menu overlay */
+  .navGroup {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
     display: none;
     flex-direction: column;
     align-items: center;
-    gap: 13px;
-    list-style: none;
+    gap: 40px;
 
-    /* Same water-drop treatment as nav pill */
-    border-radius: 16px;
+    /* Allow scrolling if the menu is taller than the viewport (e.g. landscape).
+       `safe` keeps content from being clipped above the scroll start. */
+    overflow-y: auto;
+    justify-content: safe center;
+    padding: 24px;
+
     background:
-      linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 55%),
-      rgba(6, 14, 24, 0.82);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    box-shadow:
-      inset 0 1.5px 0 rgba(255, 255, 255, 0.14),
-      inset 0 -1px  0 rgba(0, 0, 0, 0.25),
-      0 12px 36px     rgba(0, 0, 0, 0.45);
-    padding: 22px 30px;
+      radial-gradient(
+        ellipse at 50% 35%,
+        rgba(0, 237, 131, 0.08),
+        transparent 60%
+      ),
+      rgba(6, 14, 24, 0.78);
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
   }
 
-  .menuOpen {
+  .navGroupOpen {
     display: flex;
+    animation: overlayIn 0.3s ease both;
+  }
+
+  .menuItems {
+    flex-direction: column;
+    align-items: center;
+    gap: 34px;
+  }
+
+  .menuItems a {
+    font-size: 1.7rem;
+    font-weight: 500;
+  }
+
+  .cvBtn {
+    font-size: 1.4rem;
+    padding: 13px 30px;
+  }
+
+  .cvBtn svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Staggered entrance for each option */
+  .navGroupOpen .menuItems li,
+  .navGroupOpen .cvBtn {
+    animation: optionIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .navGroupOpen .menuItems li:nth-child(1) { animation-delay: 0.06s; }
+  .navGroupOpen .menuItems li:nth-child(2) { animation-delay: 0.11s; }
+  .navGroupOpen .menuItems li:nth-child(3) { animation-delay: 0.16s; }
+  .navGroupOpen .menuItems li:nth-child(4) { animation-delay: 0.21s; }
+  .navGroupOpen .menuItems li:nth-child(5) { animation-delay: 0.26s; }
+  .navGroupOpen .menuItems li:nth-child(6) { animation-delay: 0.31s; }
+  .navGroupOpen .cvBtn { animation-delay: 0.38s; }
+}
+
+/* ── Short viewports (e.g. phone in landscape) ───────────────────
+   Compress spacing and font sizes so every option + the CV button
+   fit without being cut off; the overlay scrolls if still too tall. */
+@media screen and (max-width: 830px) and (max-height: 520px) {
+  .navGroup {
+    gap: 16px;
+    padding: 56px 24px 28px;
+  }
+
+  .menuItems {
+    gap: 14px;
+  }
+
+  .menuItems a {
+    font-size: 1.25rem;
+  }
+
+  .cvBtn {
+    font-size: 1.1rem;
+    padding: 9px 22px;
+  }
+
+  .cvBtn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes optionIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navGroupOpen,
+  .navGroupOpen .menuItems li,
+  .navGroupOpen .cvBtn {
+    animation: none;
   }
 }

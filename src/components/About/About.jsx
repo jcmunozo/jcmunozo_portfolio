@@ -13,13 +13,9 @@ export const About = () => {
 	  {topics.map((topic, id) => {
 	    return (
 	      <li key={id} className={styles.aboutItem}>
-		<img src={getImageUrl(topic.img)} className={styles.aboutItemImage} alt="Frontend icon" />
-		<div className={styles.aboutItemText}>
-		  <h3>{topic.title}</h3>
-		  <p>
-		    {topic.description}
-		  </p>
-		</div>
+		<img src={getImageUrl(topic.img)} className={styles.aboutItemImage} alt={`${topic.title} icon`} />
+		<h3 className={styles.aboutItemTitle}>{topic.title}</h3>
+		<p className={styles.aboutItemDescription}>{topic.description}</p>
 	      </li>
 	    )
 	  })}
